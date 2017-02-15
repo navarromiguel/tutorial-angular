@@ -16,10 +16,21 @@
     <!--  Products Container  -->
     <div class="list-group">
       <!--  Product Container  -->
-      <div class="list-group-item">
+      <div class="list-group-item" ng-repeat="gem in gems" ng-if="!gem.soldOut">
         <h3>
-          {{product.name}}:<em class="pull-right">{{product.price}}</em>
+          {{gem.name}}:<em class="pull-right">{{gem.price}}</em>
         </h3>
+        <div ng-if="gem.images">
+          <div class="img-wrap">
+            <img src="{{gem.images[0]}}"/> 
+          </div>
+          <ul class="img-thumbnails clearfix">
+            <li ng-repeat="image in gem.images" class="small-image pull-left thumbnail">
+              <img src="{{image}}" /> 
+            </li>
+          </ul>
+        </div>
+        <button ng-if="gem.canPurchase">Añadir al carrito</button>
       </div>
     </div>
   </body>
