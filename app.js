@@ -45,4 +45,9 @@ app.controller('StoreController', function($scope){
 	  }
 	];
 
+	angular.forEach($scope.gems, function(value, key){
+		value.canPurchase = true;
+		value.soldOut = false;
+	});
+
 });
