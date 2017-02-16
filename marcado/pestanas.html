@@ -1,18 +1,21 @@
-<section class="tab">
+<section class="tab" ng-controller="TabController as tabs">
   <ul class="nav nav-pills">
-    <li>
-      <a href>Descripción</a>
+    <li ng-class="active: isSet(1)">
+      <a ng-click="setTab(1)" href>Descripción</a>
     </li>
-    <li>
-      <a href>Características</a>
+    <li ng-class="active: isSet(2)">
+      <a href ng-click="setTab(2)">Características</a>
     </li>
   </ul>
-  <div>
+  <div ng-if="isSet(1)">
     <h4>Descripcion</h4>
-    <blockquote></blockquote>
+    <blockquote>{{gem.description}}</blockquote>
   </div>
-  <div>
+  <div ng-if="isSet(2)">
     <h4>Características</h4>
-    <blockquote>Brillo: </blockquote>
+    <blockquote>Brillo: {{gem.shine}}</blockquote>
+    <blockquote>Caras: {{gem.faces}}</blockquote>
+    <blockquote>Color: {{gem.color}}</blockquote>
+    <blockquote>Rareza: {{gem.rarity}}</blockquote>
   </div>
 </section>

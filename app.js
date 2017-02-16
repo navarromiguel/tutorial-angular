@@ -46,3 +46,37 @@ app.controller('StoreController', function($scope){
 	];
 
 });
+
+app.controller('TabController', function($scope){
+
+	var tab = 1;
+
+	$scope.tab = {description: false};
+	$scope.tab.shine = {active: false};
+
+	$scope.setTab = function(tab){
+		this.tab = tab;
+	}
+
+	$scope.isSet = function(tab){
+		return this.tab == tab;
+	}
+
+
+});
+
+
+app.controller("GalleryController", function($scope){
+
+	$scope.current = 0;
+
+	$scope.setCurrent = function(currentPhoto){
+		$scope.current = currentPhoto ? currentPhoto : 0;
+		return $scope.current;
+	}
+});
+
+
+
+
+

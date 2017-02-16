@@ -20,9 +20,9 @@
         <h3>
           {{gem.name}}:<em class="pull-right">{{gem.price}}</em>
         </h3>
-        <div ng-if="gem.images">
+        <div ng-controller="GalleryController as gallery" ng-if="gem.images">
           <div class="img-wrap">
-            <img src="{{gem.images[0]}}"/> 
+            <img src="{{gem.images[current]}}"/> 
           </div>
           <ul class="img-thumbnails clearfix">
             <li ng-repeat="image in gem.images" class="small-image pull-left thumbnail">
