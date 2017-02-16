@@ -26,11 +26,12 @@
           </div>
           <ul class="img-thumbnails clearfix">
             <li ng-repeat="image in gem.images" class="small-image pull-left thumbnail">
-              <img src="{{image}}" /> 
+              <a href ng-click="setCurrent($index)"><img src="{{image}}" /><a/>
             </li>
           </ul>
         </div>
         <button ng-if="gem.canPurchase">Añadir al carrito</button>
+        <product-tabs></product-tabs>
       </div>
     </div>
   </body>

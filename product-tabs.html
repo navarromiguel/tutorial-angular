@@ -1,10 +1,10 @@
-<section class="tab" ng-controller="TabController as tabs">
+<section class="tab">
   <ul class="nav nav-pills">
     <li ng-class="active: isSet(1)">
       <a ng-click="setTab(1)" href>Descripción</a>
     </li>
     <li ng-class="active: isSet(2)">
-      <a href ng-click="setTab(2)">Características</a>
+      <a ng-click="setTab(2)" href>Características</a>
     </li>
   </ul>
   <product-description ng-if="isSet(1)"></product-description>

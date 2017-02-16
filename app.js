@@ -47,25 +47,6 @@ app.controller('StoreController', function($scope){
 
 });
 
-app.controller('TabController', function($scope){
-
-	var tab = 1;
-
-	$scope.tab = {description: false};
-	$scope.tab.shine = {active: false};
-
-	$scope.setTab = function(tab){
-		this.tab = tab;
-	}
-
-	$scope.isSet = function(tab){
-		return this.tab == tab;
-	}
-
-
-});
-
-
 app.controller("GalleryController", function($scope){
 
 	$scope.current = 0;
@@ -76,6 +57,37 @@ app.controller("GalleryController", function($scope){
 	}
 });
 
+app.directive("productDescription", function() { 
+	return {
+		restrict: 'E',
+		templateUrl: "product-description.html" 
+	};
+});
+
+app.directive("productSpecs", function() { 
+	return {
+		restrict: 'A',
+		templateUrl: "product-specs.html" 
+	};
+});
+
+app.directive("productTabs", function() { return {
+  restrict: 'E',
+  templateUrl: "product-tabs.html",
+  contollerAs: 'tab',
+  controller: function($scope){
+      $scope.tab = 1;
+
+      $scope.setTab = function(selectedTab){
+        $scope.tab = selectedTab;
+      };
+
+      $scope.isSet = function(tabCheck){
+        return $scope.tab == tabCheck;
+      };
+
+  } };
+});
 
 
 
